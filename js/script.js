@@ -24,3 +24,20 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+var btnText = document.querySelector('.brands__footer--btn');
+var brandBoxHeight = document.querySelector('.brands__list');
+var arrowDirection = document.querySelector('.brands__footer--arrow');
+
+btnText.addEventListener('click', function () {
+  if (btnText.textContent === 'Скрыть') {
+    brandBoxHeight.classList.remove('brands__list--height');
+    arrowDirection.src = 'img/icon.svg';
+    return (btnText.textContent = 'Показать все');
+  }
+  if (btnText.textContent === 'Показать все') {
+    brandBoxHeight.classList.add('brands__list--height');
+    btnText.textContent = 'Скрыть';
+    arrowDirection.src = 'img/icon2.svg';
+  }
+});
